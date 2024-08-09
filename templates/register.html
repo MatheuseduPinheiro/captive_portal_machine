@@ -1,0 +1,41 @@
+{% extends 'auth_layout.html' %}
+{% block title %} {{ title }} {% endblock %}
+{% block content %}
+
+<div class="register">
+    {% include "alert.html" %}
+    <h1>Register</h1>
+    <div class="links">
+        <a href="{{ url_for('app.login') }}">Login</a>
+        <a href="{{ url_for('app.register') }}" class="active">Register</a>
+    </div>
+    <form action="{{ url_for('app.register') }}" method="post" autocomplete="off">
+        <label for="username">
+            <i class="fas fa-user"></i>
+        </label>
+        <input type="text" name="username" placeholder="Username" id="username" required>
+        <label for="password">
+            <i class="fas fa-lock"></i>
+        </label>
+        <input type="password" name="password" placeholder="Password" id="password" required>
+        <label for="email">
+            <i class="fas fa-envelope"></i>
+        </label>
+        <input type="email" name="email" placeholder="Email" id="email" required>
+        <!-- Exibe as mensagens flash aqui -->
+        <div class="msg">
+            {% with messages = get_flashed_messages(with_categories=true) %}
+                {% if messages %}
+                    <ul class="flashes">
+                        {% for category, message in messages %}
+                            <li class="{{ category }}">{{ message }}</li>
+                        {% endfor %}
+                    </ul>
+                {% endif %}
+            {% endwith %}
+        </div>
+        <input type="submit" value="Register">
+    </form>
+</div>
+
+{% endblock %}
