@@ -4,7 +4,7 @@ body {
     background-color: #f0f0f0;
     margin: 0;
     padding: 0;
-	overflow: hidden;
+    overflow: hidden;
 }
 
 #auth {
@@ -13,7 +13,7 @@ body {
     align-items: center;
     min-height: 100vh;
     background-color: #ffffff;
-	overflow: hidden;
+    overflow: hidden;
 }
 
 h1 {
@@ -54,34 +54,49 @@ form {
     flex-direction: column;
 }
 
+
 label {
     color: #ffffff;
     margin-bottom: 20px;
-    font-size: 32px; /
+    font-size: 32px;
 }
 
-input[type="text"], input[type="password"], input[type="email"] {
-    padding: 40px; 
+input[type="text"], input[type="password"], input[type="email"], input[type="file"] {
+    padding: 20px; 
     margin-bottom: 50px; 
     border: none;
     border-radius: 20px;
     background-color: #333333;
     color: #ffffff;
     font-size: 32px; 
+    display: block;
+}
+
+input[type="file"] {
+    padding: 10px; 
+    background-color: #444444; 
+    border: 1px solid #555555;
 }
 
 input[type="submit"] {
-    padding: 40px; 
+    padding: 20px; 
     background-color: #555;
     border: none;
     border-radius: 20px; 
     cursor: pointer;
-    font-size: 40px; 
+    font-size: 32px; 
     transition: background-color 0.3s ease;
 }
 
 input[type="submit"]:hover {
     background-color: #777;
+}
+
+#legenda-image{
+    color: #bbb;
+    font-size: 30px; 
+    margin-top: -10px; 
+    margin-bottom: 50px; 
 }
 
 .msg {
@@ -90,6 +105,60 @@ input[type="submit"]:hover {
     margin-bottom: 50px; 
     text-align: center;
 }
+
+
+.alert {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    font-size: 28px;
+    color: #ffffff;
+}
+
+.alert-success {
+    background-color: #4caf50; /* Green */
+}
+
+.alert-info {
+    background-color: #2196f3; /* Blue */
+}
+
+.alert-warning {
+    background-color: #ff9800; /* Orange */
+}
+
+.alert-danger {
+    background-color: #f44336; /* Red */
+}
+
+.alert-dismissible .btn-close {
+    background: none;
+    border: none;
+    color: #ffffff;
+    font-size: 28px;
+    margin-left: auto;
+    cursor: pointer;
+}
+
+.alert-dismissible .btn-close:hover {
+    color: #dddddd;
+}
+
+.alert-heading {
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.alert-body {
+    font-size: 28px;
+    margin: 0;
+}
+
+
 
 /* Responsive Design */
 @media (max-width: 600px) {
@@ -102,9 +171,9 @@ input[type="submit"]:hover {
         font-size: 64px;
     }
 
-    input[type="text"], input[type="password"], input[type="email"], input[type="submit"] {
+    input[type="text"], input[type="password"], input[type="email"], input[type="file"], input[type="submit"] {
         font-size: 44px; 
-        padding: 50px; 
+        padding: 20px; 
     }
 
     input[type="submit"] {
@@ -116,7 +185,6 @@ input[type="submit"]:hover {
     }
 
     label {
-        font-size: 44px; /
+        font-size: 44px;
     }
 }
-

@@ -22,6 +22,13 @@
             <i class="fas fa-envelope"></i>
         </label>
         <input type="email" name="email" placeholder="Email" id="email" required>
+        
+        <label for="file-input" class="custom-file-upload">
+            <i class="fas fa-image"></i> Procurar
+        </label>
+        <input type="file" id="file-input" name="image" placeholder="Procurar" required>
+        <small id="legenda-image">Insira uma imagem sua (JPG ou JPEG)</small>
+
         <!-- Exibe as mensagens flash aqui -->
         <div class="msg">
             {% with messages = get_flashed_messages(with_categories=true) %}

@@ -1,6 +1,9 @@
+import os
 from flask import Flask
 from controllers.route import app as app_blueprint
 from flask_mysqldb import MySQL
+
+UPLOAD_FOLDER = 'uploads'  # Definido corretamente aqui
 
 def create_app():
     app = Flask(__name__)
@@ -11,11 +14,17 @@ def create_app():
     app.config['MYSQL_USER'] = 'root'
     app.config['MYSQL_PASSWORD'] = ''
     app.config['MYSQL_DB'] = 'captiveportal_machine'
+    
+    app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
     mysql = MySQL(app)
     app.config['mysql'] = mysql
 
-    app.register_blueprint(app_blueprint, url_prefix='/')  # Registrando o blueprint com o prefixo correto
+    app.register_blueprint(app_blueprint, url_prefix='/')
+
+    # Verificar se o diretório de uploads existe, e se não, criar
+    if not os.path.exists(UPLOAD_FOLDER):
+        os.makedirs(UPLOAD_FOLDER)
 
     return app
 
