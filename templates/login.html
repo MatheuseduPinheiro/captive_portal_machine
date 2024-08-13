@@ -1,6 +1,6 @@
 {% extends 'auth_layout.html' %}
 {% block title %} {{ title }} {% endblock %}
-{% block content%}
+{% block content %}
 <div class="login">
     {% include "alert.html" %}
     <h1>Login</h1>
@@ -8,18 +8,12 @@
         <a href="{{ url_for('app.login') }}" class="active">Login</a>
         <a href="{{ url_for('app.register') }}">Register</a>
     </div>
-    <form action="{{ url_for('app.login') }}" method="post">
-        <label for="username">
-            <i class="fas fa-user"></i>
+    <form action="{{ url_for('app.login') }}" method="post" enctype="multipart/form-data">
+        <label for="file-input" class="custom-file-upload">
+            <i class="fas fa-image"></i> Procurar
         </label>
-        <input type="text" name="username" placeholder="Username" id="username" required>
-        <label for="password">
-            <i class="fas fa-lock"></i>
-        </label>
-        <input type="password" name="password" placeholder="Password" id="password" required>
-
-        
-        <div class="msg">{{ msg }}</div>
+        <input type="file" id="file-input-login" name="image" placeholder="Selecione uma imagem do seu dispositivo" required>
+        <small id="legenda-image">Insira uma imagem sua (JPG, JPEG, PNG)</small>
         <input type="submit" value="Login">
     </form>
 </div>

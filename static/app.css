@@ -14,34 +14,37 @@ body {
     min-height: 100vh;
     background-color: #ffffff;
     overflow: hidden;
+    padding: 10px; /* Adicionei padding para evitar que o conteúdo encoste nas bordas */
+   
 }
 
 h1 {
     color: #ffffff;
-    font-size: 400px; 
-    margin-bottom: 110px; 
+    font-size: 48px; /* Reduzi o tamanho para melhorar a legibilidade */
+    margin-bottom: 30px; 
     text-align: center;
 }
 
 .login, .register {
     background-color: #1c1c1c;
-    padding: 130px; 
-    border-radius: 30px; 
-    box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.3); 
+    padding: 50px; /* Ajustei o padding para que seja mais confortável em diferentes telas */
+    border-radius: 20px; 
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3); 
     width: 100%;  
-    max-width: 800px; 
+    max-width: 500px; /* Diminuí o max-width para melhor adaptação em telas menores */
+    margin-bottom: 20px;
 }
 
 .links {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 50px; 
+    margin-bottom: 30px; /* Ajustei a margem para melhor espaçamento */
 }
 
 .links a {
     color: #bbb;
     text-decoration: none;
-    font-size: 40px; 
+    font-size: 18px; /* Reduzi o tamanho da fonte */
 }
 
 .links a.active {
@@ -54,21 +57,20 @@ form {
     flex-direction: column;
 }
 
-
 label {
     color: #ffffff;
-    margin-bottom: 20px;
-    font-size: 32px;
+    margin-bottom: 15px; /* Ajustei a margem para uma melhor organização */
+    font-size: 18px;
 }
 
 input[type="text"], input[type="password"], input[type="email"], input[type="file"] {
-    padding: 20px; 
-    margin-bottom: 50px; 
+    padding: 15px; /* Ajustei o padding para melhorar a usabilidade */
+    margin-bottom: 20px; 
     border: none;
-    border-radius: 20px;
+    border-radius: 10px;
     background-color: #333333;
     color: #ffffff;
-    font-size: 32px; 
+    font-size: 16px; 
     display: block;
 }
 
@@ -79,12 +81,12 @@ input[type="file"] {
 }
 
 input[type="submit"] {
-    padding: 20px; 
+    padding: 15px; 
     background-color: #555;
     border: none;
-    border-radius: 20px; 
+    border-radius: 10px; 
     cursor: pointer;
-    font-size: 32px; 
+    font-size: 18px; 
     transition: background-color 0.3s ease;
 }
 
@@ -92,99 +94,67 @@ input[type="submit"]:hover {
     background-color: #777;
 }
 
-#legenda-image{
+#legenda-image {
     color: #bbb;
-    font-size: 30px; 
-    margin-top: -10px; 
-    margin-bottom: 50px; 
+    font-size: 16px; 
+    margin-top: -5px; 
+    margin-bottom: 20px; 
 }
 
 .msg {
     color: #ff4444;
-    font-size: 32px; 
-    margin-bottom: 50px; 
+    font-size: 18px; 
+    margin-bottom: 30px; 
     text-align: center;
 }
-
 
 .alert {
     display: flex;
     align-items: center;
-    padding: 20px;
+    padding: 10px;
     margin-bottom: 20px;
     border-radius: 10px;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-    font-size: 28px;
+    font-size: 16px;
     color: #ffffff;
-}
-
-.alert-success {
-    background-color: #4caf50; /* Green */
-}
-
-.alert-info {
-    background-color: #2196f3; /* Blue */
-}
-
-.alert-warning {
-    background-color: #ff9800; /* Orange */
-}
-
-.alert-danger {
-    background-color: #f44336; /* Red */
-}
-
-.alert-dismissible .btn-close {
-    background: none;
-    border: none;
-    color: #ffffff;
-    font-size: 28px;
-    margin-left: auto;
-    cursor: pointer;
-}
-
-.alert-dismissible .btn-close:hover {
-    color: #dddddd;
 }
 
 .alert-heading {
-    font-size: 32px;
+    font-size: 18px;
     font-weight: bold;
     margin-bottom: 10px;
 }
 
 .alert-body {
-    font-size: 28px;
+    font-size: 16px;
     margin: 0;
 }
-
-
 
 /* Responsive Design */
 @media (max-width: 600px) {
     .login, .register {
-        padding: 100px; 
+        padding: 30px; 
         width: 100%;
     }
 
     h1 {
-        font-size: 64px;
+        font-size: 32px;
     }
 
     input[type="text"], input[type="password"], input[type="email"], input[type="file"], input[type="submit"] {
-        font-size: 44px; 
-        padding: 20px; 
+        font-size: 16px; 
+        padding: 10px; 
     }
 
     input[type="submit"] {
-        font-size: 48px;
+        font-size: 16px;
     }
 
     .links a {
-        font-size: 32px; 
+        font-size: 14px; 
     }
 
     label {
-        font-size: 44px;
+        font-size: 16px;
     }
 }
